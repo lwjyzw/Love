@@ -2,7 +2,7 @@
 <!-- saved from url=(0141)file:///D:/%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0/HTML/%E5%8A%A8%E6%80%81%E6%95%B0%E5%AD%97%E4%B9%B1%E7%A0%81(%E6%9C%AA%E5%AE%8C%E6%88%90).html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
-    <title>LoveHTT</title>
+    <title>云泥 | LoveHTT</title>
 </head>
 <body> <canvas id="canvas" height="657" width="1366"></canvas>
 <style type="text/css">
@@ -24,21 +24,21 @@
  
     var fontSize = 16;
     var columns = canvas.width / fontSize;
-    // ���ڼ����������ʱ���꣬���Գ��ȼ�Ϊ����
+    // 
     var drops = [];
-    //��ʼֵ
+    //
     for (var x = 0; x < columns; x++) {
         drops[x] = 1;
     }
  
     function draw() {
-        //�ñ�������͸������͸��
+        //
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        //������ɫ
+        //
         ctx.fillStyle = '#f584b7';
         ctx.font = fontSize + 'px arial';
-        //�����������
+        //
         for (var i = 0; i < drops.length; i++) {
             var text = texts[Math.floor(Math.random() * texts.length)];
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
