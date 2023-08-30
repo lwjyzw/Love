@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>äº‘æ³¥ | é‡å­æ¨¡å‹</title>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
-    <!-- ×¢Òâ£ºstyleºÍscript¶¼°üº¬ÔÚbodyÄÚ²¿£¬·ñÔò»áµ¼ÖÂ´úÂëÎŞÑùÊ½Ğ§¹ûÒÔ¼°jsÊÂ¼şÎŞ·¨ÊµÏÖ -->
+    <!-- æ³¨æ„ï¼šstyleå’Œscriptéƒ½åŒ…å«åœ¨bodyå†…éƒ¨ï¼Œå¦åˆ™ä¼šå¯¼è‡´ä»£ç æ— æ ·å¼æ•ˆæœä»¥åŠjsäº‹ä»¶æ— æ³•å®ç° -->
     <body>
         <div id="jsi-particle-container" class="container">
-            <!-- ´´½¨»­²¼ -->
-            <canvas width="100%" height="100%" style="align:center;"></canvas><!--canvas±êÇ©¶¨ÒåÍ¼ĞÎ£¬±ØĞëÊ¹ÓÃ½Å±¾À´»æÖÆÍ¼ĞÎ-->
+            <!-- åˆ›å»ºç”»å¸ƒ -->
+            <canvas width="100%" height="100%" style="align:center;"></canvas><!--canvasæ ‡ç­¾å®šä¹‰å›¾å½¢ï¼Œå¿…é¡»ä½¿ç”¨è„šæœ¬æ¥ç»˜åˆ¶å›¾å½¢-->
         </div>
         
         <style>
@@ -19,19 +19,19 @@
                 margin: 0;
                 padding: 0;
                 overflow: hidden; 
-                /*overflowÊôĞÔÖ¸¶¨Èç¹ûÄÚÈİÒç³öÒ»¸öÔªËØµÄ¿ò£¬»á·¢ÉúÊ²Ã´  ÆäÊôĞÔÖµhidden±íÊ¾ÄÚÈİ»á±»ĞŞ½¨£¬²¢ÇÒÆäÓàÄÚÈİÊÇ²»¿É¼ûµÄ*/
-                /* overflowÊôĞÔÖµ:
-                    visible  Ä¬ÈÏÖµ£¬ÄÚÈİ²»»á±»ĞŞ¼ô£¬»á³ÊÏÖÔÚÔªËØ¿òÖ®Íâ
-                    hidden ÄÚÈİ»á±»ĞŞ¼ô£¬²¢ÇÒÆäÓàÄÚÈİÊÇ²»¿É¼ûµÄ
-                    scroll  ÄÚÈİ»á±»ĞŞ¼ô£¬µ«ÊÇä¯ÀÀÆ÷»áÏÔÊ¾¹ö¶¯ÌõÒÔ±ã²é¿´ÆäËûÄÚÈİ
-                    auto  ÈôÄÚÈİ±»ĞŞ¼ô£¬Ôòä¯ÀÀÆ÷»áÏÔÊ¾¹ö¶¯Ìõ
-                    inherit  ¹æ¶¨Ó¦¸Ã´Ó¸¸ÔªËØ¼Ì³ĞoverflowÊôĞÔµÄÖµ
+                /*overflowå±æ€§æŒ‡å®šå¦‚æœå†…å®¹æº¢å‡ºä¸€ä¸ªå…ƒç´ çš„æ¡†ï¼Œä¼šå‘ç”Ÿä»€ä¹ˆ  å…¶å±æ€§å€¼hiddenè¡¨ç¤ºå†…å®¹ä¼šè¢«ä¿®å»ºï¼Œå¹¶ä¸”å…¶ä½™å†…å®¹æ˜¯ä¸å¯è§çš„*/
+                /* overflowå±æ€§å€¼:
+                    visible  é»˜è®¤å€¼ï¼Œå†…å®¹ä¸ä¼šè¢«ä¿®å‰ªï¼Œä¼šå‘ˆç°åœ¨å…ƒç´ æ¡†ä¹‹å¤–
+                    hidden å†…å®¹ä¼šè¢«ä¿®å‰ªï¼Œå¹¶ä¸”å…¶ä½™å†…å®¹æ˜¯ä¸å¯è§çš„
+                    scroll  å†…å®¹ä¼šè¢«ä¿®å‰ªï¼Œä½†æ˜¯æµè§ˆå™¨ä¼šæ˜¾ç¤ºæ»šåŠ¨æ¡ä»¥ä¾¿æŸ¥çœ‹å…¶ä»–å†…å®¹
+                    auto  è‹¥å†…å®¹è¢«ä¿®å‰ªï¼Œåˆ™æµè§ˆå™¨ä¼šæ˜¾ç¤ºæ»šåŠ¨æ¡
+                    inherit  è§„å®šåº”è¯¥ä»çˆ¶å…ƒç´ ç»§æ‰¿overflowå±æ€§çš„å€¼
                     
-                    ×¢Òâ£ºoverflowÊôĞÔÖ»¹¤×÷ÓÚÖ¸¶¨¸ß¶ÈµÄ¿éÔªËØÉÏ
+                    æ³¨æ„ï¼šoverflowå±æ€§åªå·¥ä½œäºæŒ‡å®šé«˜åº¦çš„å—å…ƒç´ ä¸Š
                  */
             }
             .container{
-                width: 100£¥;
+                width: 100ï¼…;
                 height: 100%;
                 margin: 0;
                 padding: 0;
@@ -40,14 +40,14 @@
         </style>
         
         <script>
-            //»æÖÆÍ¼ĞÎ
+            //ç»˜åˆ¶å›¾å½¢
             var RENDERER = {
                 PARTICLE_COUNT : 1000,
                 PARTICLE_RADIUS : 1,
                 MAX_ROTATION_ANGLE : Math.PI / 60,
                 TRANSLATION_COUNT : 10000,
                 
-                //º¯ÊıÌå»ã×Ü
+                //å‡½æ•°ä½“æ±‡æ€»
                 init : function(strategy){
                     this.setParameters(strategy);
                     this.createParticles();
@@ -56,27 +56,27 @@
                     this.bindEvent();
                     this.drawFigure();
                 },
-                //´°¿ÚÏìÓ¦ÊÂ¼ş£¬Í¼ĞÎ´óĞ¡¿ØÖÆ
+                //çª—å£å“åº”äº‹ä»¶ï¼Œå›¾å½¢å¤§å°æ§åˆ¶
                 setParameters : function(strategy){
                     this.$window = $(window);
                     
-                    //µ÷ÓÃhtmlÖĞµÄÑùÊ½
+                    //è°ƒç”¨htmlä¸­çš„æ ·å¼
                     this.$container = $('#jsi-particle-container');
                     this.width = this.$container.width();
                     this.height = this.$container.height();
                     
                     this.$canvas = $('<canvas />').attr({width : this.width, height : this.height}).appendTo(this.$container);
-                    this.context = this.$canvas.get(0).getContext('2d');//2D¶¯»­
+                    this.context = this.$canvas.get(0).getContext('2d');//2DåŠ¨ç”»
                     
                     this.center = {x : this.width / 2, y : this.height / 2};
                     
-                    //rotation¿ØÖÆĞı×ª  MAX_ROTATION_ANGLEËæ»úĞı×ª
+                    //rotationæ§åˆ¶æ—‹è½¬  MAX_ROTATION_ANGLEéšæœºæ—‹è½¬
                     this.rotationX = this.MAX_ROTATION_ANGLE;
                     this.rotationY = this.MAX_ROTATION_ANGLE;
                     
-                    //strategyIndexÕ½ÂÔË÷Òı
+                    //strategyIndexæˆ˜ç•¥ç´¢å¼•
                     this.strategyIndex = 0;
-                    //translationCount¶¯»­¹ı¶ÉÊıÁ¿  Ó°Ïìµã»÷ÑÕÉ«±ä»¯µÄÉîÇ³¶È
+                    //translationCountåŠ¨ç”»è¿‡æ¸¡æ•°é‡  å½±å“ç‚¹å‡»é¢œè‰²å˜åŒ–çš„æ·±æµ…åº¦
                     this.translationCount = 0;
                     this.theta = 0;
                     
@@ -84,24 +84,24 @@
                     this.particles = [];
                 },
                 createParticles : function(){
-                    //Ñ­»·Êä³ö
+                    //å¾ªç¯è¾“å‡º
                     for(var i = 0; i < this.PARTICLE_COUNT; i ++){
                         this.particles.push(new PARTICLE(this.center));
                     }
                 },
-                //°ó¶¨ÊÂ¼şbind  
+                //ç»‘å®šäº‹ä»¶bind  
                 reconstructMethod : function(){
-                    this.setupFigure = this.setupFigure.bind(this);//½¨Á¢
-                    this.drawFigure = this.drawFigure.bind(this);//»æÖÆ
-                    this.changeAngle = this.changeAngle.bind(this);//¸Ä±ä
+                    this.setupFigure = this.setupFigure.bind(this);//å»ºç«‹
+                    this.drawFigure = this.drawFigure.bind(this);//ç»˜åˆ¶
+                    this.changeAngle = this.changeAngle.bind(this);//æ”¹å˜
                 },
                 bindEvent : function(){
-                    this.$container.on('click', this.setupFigure);//µã»÷ÊÂ¼ş
-                    this.$container.on('mousemove', this.changeAngle);//Êó±êÏìÓ¦ÊÂ¼ş
+                    this.$container.on('click', this.setupFigure);//ç‚¹å‡»äº‹ä»¶
+                    this.$container.on('mousemove', this.changeAngle);//é¼ æ ‡å“åº”äº‹ä»¶
                 },
                 changeAngle : function(event){
-                    var offset = this.$container.offset(), //offset·½·¨·µ»Ø»òÉèÖÃÆ¥ÅäÔªËØÏà¶ÔÓÚÎÄµµµÄÆ«ÒÆ£¨Î»ÖÃ£©
-                        x = event.clientX - offset.left + this.$window.scrollLeft(),//clientX  jsÊó±êÊÂ¼ş
+                    var offset = this.$container.offset(), //offsetæ–¹æ³•è¿”å›æˆ–è®¾ç½®åŒ¹é…å…ƒç´ ç›¸å¯¹äºæ–‡æ¡£çš„åç§»ï¼ˆä½ç½®ï¼‰
+                        x = event.clientX - offset.left + this.$window.scrollLeft(),//clientX  jsé¼ æ ‡äº‹ä»¶
                         y = event.clientY - offset.top + this.$window.scrollTop();
                     
                     this.rotationX = (this.center.y - y) / this.center.y * this.MAX_ROTATION_ANGLE;
@@ -152,7 +152,7 @@
                 
                 getStrategies : function(){
                     var strategies = [];
-                    //Ğ£Ñé
+                    //æ ¡éªŒ
                     for(var i in this){
                         if(this[i] == arguments.callee || typeof this[i] != 'function'){
                             continue;
@@ -161,7 +161,7 @@
                     }
                     return strategies;
                 },
-                //Ëæ»úÊı»æÖÆÍ¼ĞÎ
+                //éšæœºæ•°ç»˜åˆ¶å›¾å½¢
                 createSphere : function(){
                     var cosTheta = Math.random() * 2 - 1,
                         sinTheta = Math.sqrt(1 - cosTheta * cosTheta),
@@ -230,9 +230,9 @@
                 SPRING : 0.01,
                 FRICTION : 0.9,
                 FOCUS_POSITION : 300,
-                COLOR : 'hsl(%hue, 100%, 50%)',//HSLÖµ£¬ÔÚCSSÖĞ£¬¿ÉÒÔÊ¹ÓÃÉ«Ïà¡¢±¥ºÍ¶ÈºÍÃ÷¶È£¨HSL£©À´Ö¸¶¨ÑÕÉ«
+                COLOR : 'hsl(%hue, 100%, 50%)',//HSLå€¼ï¼Œåœ¨CSSä¸­ï¼Œå¯ä»¥ä½¿ç”¨è‰²ç›¸ã€é¥±å’Œåº¦å’Œæ˜åº¦ï¼ˆHSLï¼‰æ¥æŒ‡å®šé¢œè‰²
                 
-                //²»Ì«¶®init : functionº¬Òå
+                //ä¸å¤ªæ‡‚init : functionå«ä¹‰
                 init : function(){
                     this.x = 0;
                     this.y = 0;
@@ -316,6 +316,6 @@
         </script>
     </body>
 </html>
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-°æÈ¨ÉùÃ÷£º±¾ÎÄÎªCSDN²©Ö÷¡¸s_alin¡¹µÄÔ­´´ÎÄÕÂ£¬×ñÑ­CC 4.0 BY-SA°æÈ¨Ğ­Òé£¬×ªÔØÇë¸½ÉÏÔ­ÎÄ³ö´¦Á´½Ó¼°±¾ÉùÃ÷¡£
-Ô­ÎÄÁ´½Ó£ºhttps://blog.csdn.net/s_alin/article/details/131014605
+â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+ç‰ˆæƒå£°æ˜ï¼šæœ¬æ–‡ä¸ºCSDNåšä¸»ã€Œs_alinã€çš„åŸåˆ›æ–‡ç« ï¼Œéµå¾ªCC 4.0 BY-SAç‰ˆæƒåè®®ï¼Œè½¬è½½è¯·é™„ä¸ŠåŸæ–‡å‡ºå¤„é“¾æ¥åŠæœ¬å£°æ˜ã€‚
+åŸæ–‡é“¾æ¥ï¼šhttps://blog.csdn.net/s_alin/article/details/131014605
