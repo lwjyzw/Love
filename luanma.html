@@ -2,7 +2,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 <head>
-    <title>LoveHTT</title>
+    <title>云泥 | 数码领域</title>
 </head>
 <body> <canvas id="canvas"></canvas>
 <style type="text/css">
@@ -24,21 +24,21 @@
  
     var fontSize = 16;
     var columns = canvas.width / fontSize;
-    // ���ڼ����������ʱ���꣬���Գ��ȼ�Ϊ����
+    // 用于计算输出文字时坐标，所以长度即为列数
     var drops = [];
-    //��ʼֵ
+    //初始值
     for (var x = 0; x < columns; x++) {
         drops[x] = 1;
     }
  
     function draw() {
-        //�ñ�������͸������͸��
+        //让背景逐渐由透明到不透明
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        //������ɫ
+        //文字颜色
         ctx.fillStyle = '#f584b7';
         ctx.font = fontSize + 'px arial';
-        //�����������
+        //逐行输出文字
         for (var i = 0; i < drops.length; i++) {
             var text = texts[Math.floor(Math.random() * texts.length)];
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
